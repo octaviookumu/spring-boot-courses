@@ -1,11 +1,9 @@
 package com.octaviookumu.cruddemo.rest;
 
 import com.octaviookumu.cruddemo.entity.Student;
+import com.octaviookumu.cruddemo.exception.StudentNotFoundException;
 import jakarta.annotation.PostConstruct;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +30,12 @@ public class StudentRestController {
     // define endpoint or '/students/{studentId}' return student at index
     @GetMapping("/students/{studentId}")
     public Student getStudent(@PathVariable int studentId) {
+
+        // check the studentId against list size
+        if ((studentId >= theStudents.size()) || (studentId < 0)) {
+            throw new StudentNotFoundException("Student id not found - " + studentId);
+        }
+
         return theStudents.get(studentId);
     }
-
 }
