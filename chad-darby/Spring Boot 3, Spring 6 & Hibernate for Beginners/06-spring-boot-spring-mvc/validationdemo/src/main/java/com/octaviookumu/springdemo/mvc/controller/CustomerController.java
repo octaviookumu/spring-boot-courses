@@ -41,7 +41,7 @@ public class CustomerController {
 
         System.out.println("Binding results: " + theBindingResult.toString());
         // has useful details on errors
-        // in this case e.g codes:[typeMismatch.customer.freePasses...] contained in the log
+        // in this case e.g. codes:[typeMismatch.customer.freePasses...] contained in the log
         // overriding this code in messages.properties enables us to add custom error messages
 
         System.out.println("\n\n\n\n");
