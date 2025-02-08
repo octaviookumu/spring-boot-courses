@@ -8,6 +8,6 @@ public class LoginController {
 
     @GetMapping("/showMyLoginPage") // based on the information from our spring security config file
     public String showMyLoginPage() {
-        return "plain-login";
+        return "fancy-login";
     }
 }
