@@ -37,7 +37,7 @@ public class DemoSecurityConfig {
     }
 
     @Bean
-    private SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(configurer -> configurer.anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/showMyLoginPage") // reference custom login form
