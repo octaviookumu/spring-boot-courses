@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Company Home Page</title>
@@ -11,6 +11,10 @@
 <hr>
 
 <p>Welcome to the company home page!</p>
+
+<form action="#" th:action="@{/logout}" method="POST">
+    <button type="submit">Logout</button>
+</form>
 
 </body>
 </html>
